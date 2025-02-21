@@ -1,1 +1,1 @@
-# Members-Only
+Create a simple Members-Only using passportjs, express.js and postgresql.
