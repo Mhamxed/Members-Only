@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Signup</title>
+</head>
+<body>
+    <div class="container">
+        <%- include('partials/navbar')%>
+        <div class="main">
+            <form action="/login" method="post">
+                <h2>Welcome back</h2>
+                <div class="input">
+                    <input type="text" name="username" placeholder="username" required>
+                    <p class="error"><%= usernameErr %></p>
+                </div>
+                <div class="input">
+                    <input type="password" name="password" placeholder="password" required>
+                    <p class="error"><%= passwordErr %></p>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

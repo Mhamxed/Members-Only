@@ -1,0 +1,14 @@
+<div class="navbar">
+    <p><a href="/">Members</a></p>
+    <% if (user) {%>
+        <div class="buttons">
+            <button><a href="/create-message">Post</a></button>
+            <button><a href="/logout">Log out</a></button>
+        </div>
+    <%} else {%>
+        <div class="buttons">
+            <button><a href="/login">Login</a></button>
+            <button><a href="/signup">Sign up</a></button>
+        </div>
+    <% } %>
+</div>

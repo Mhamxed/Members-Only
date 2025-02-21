@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container">
+        <%- include('partials/navbar') %>
+    </div>
+    <div class="main">
+        <% if (!user) {%>
+            <div class="login-or-signup">
+                <h3>To create a post, please login or sign up</h3>
+                <div class="buttons">
+                    <button><a href="/login">Login</a></button>
+                    <button><a href="/signup">Sign up</a></button>
+                </div>
+            </div>
+            <div class="messages">
+                <%messages .forEach(msg => {%>
+                    <div class="message">
+                        <div class="user-date">
+                            <div class="fullname-username">
+                                <p><%= msg.fullname %></p>
+                                <p>@<%= msg.username %></p>
+                            </div>
+                            <div class="date">
+                                <p><%= msg.date %></p>
+                            </div>
+                        </div>
+                        <p class="msg"><strong><%= msg.message%></strong></p>
+                    </div>
+                <% })%>
+            </div>
+        <% } else { %>
+            <div class="messages">
+                <%messages.forEach(msg => {%>
+                    <div class="message">
+                        <div class="user-date">
+                            <div class="fullname-username">
+                                <p><%= msg.fullname %></p>
+                                <p>@<%= msg.username %></p>
+                            </div>
+                            <div class="date">
+                                <p><%= msg.date %></p>
+                            </div>
+                        </div>
+                        <p class="msg"><strong><%= msg.message %></strong></p>
+                    </div>
+               <% })%>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
